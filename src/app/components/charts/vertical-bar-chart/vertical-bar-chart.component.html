@@ -1,0 +1,22 @@
+<ngx-charts-bar-vertical-2d
+  [results]="data"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [legendTitle]="legendTitle"
+  [scheme]="colorScheme"
+  [noBarWhenZero]="true"
+  [roundEdges]="true"
+>
+  <ng-template #tooltipTemplate let-model="model">
+    <div class="custom-tooltext">
+      <p>{{ model.name }}</p>
+      <p>{{ prettyNumber(model.value) }}</p>
+    </div>
+  </ng-template>
+</ngx-charts-bar-vertical-2d>

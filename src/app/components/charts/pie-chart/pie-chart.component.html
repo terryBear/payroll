@@ -1,0 +1,15 @@
+<ngx-charts-pie-chart
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+  [legend]="showLegend"
+  [labels]="showLabels"
+  [doughnut]="isDoughnut"
+>
+  <ng-template #tooltipTemplate let-model="model">
+    <div class="custom-tooltext">
+      <p>{{ model.name }}</p>
+      <p>{{ prettyNumber(model.value) }}</p>
+    </div>
+  </ng-template>
+</ngx-charts-pie-chart>

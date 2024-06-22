@@ -1,0 +1,256 @@
+:root {
+  --primary: #176982;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #ffffff;
+  --dark: #333333;
+  --background-color: #eff3f5;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 0.5;
+    transition: all ease-in-out 0.2s;
+  }
+
+  &:focus {
+    opacity: 1;
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+.btn-clear {
+  background-color: transparent;
+  color: inherit;
+  border: transparent;
+  padding: 0 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--light);
+  border: 1px solid var(--primary);
+}
+
+.btn-secondary {
+  background-color: var(--light);
+  color: var(--dark);
+  border: 1px solid var(--primary);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-below {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &p {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0;
+    font-size: 10px;
+  }
+}
+
+.divider {
+  border-top: 1px solid #e6e6e6;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+  .navigation-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 72px;
+    height: 100vh;
+    border-right: 1px solid #e6e6e6;
+
+    &.divider {
+      border-right: 0;
+
+      app-logo {
+        padding: 0;
+      }
+    }
+
+    app-logo {
+      padding: 9px 0 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid #e6e6e6;
+      margin: 10px 0 20px;
+      .navlogo {
+        width: 44px;
+      }
+    }
+
+    mat-list {
+      padding: 0;
+      mat-list-item {
+        padding: 0px 0;
+        display: block;
+        height: 66px;
+        &.divider {
+          border-top: 1px solid #e6e6e6;
+
+          a {
+            margin: 10px 0;
+          }
+        }
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          height: 56px;
+          width: 56px;
+          color: #666666;
+
+          mat-icon {
+            color: #666666;
+            font-size: 24px;
+          }
+
+          &.link-selected {
+            background-color: #dfe5ec;
+            border-radius: 10px;
+
+            mat-icon {
+              color: #617b9e;
+            }
+          }
+
+          span {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  .dashboard-container-router {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #eff3f5;
+    display: flex;
+    flex-direction: row;
+
+    > *:not(router-outlet) {
+      width: 100%;
+      padding: 8px;
+      display: flex;
+      flex-direction: row;
+    }
+    .dashboard-container-center-detail {
+      padding: 0 8px 0 0;
+      .grid-card {
+        width: 320px;
+        background-color: #fff;
+        padding: 10px 0;
+        border-radius: 16px;
+        height: 96.5vh;
+      }
+    }
+
+    .dashboard-container-center {
+      width: 100%;
+
+      .grid-card {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 16px;
+
+        .top-toolbar {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .search-component {
+            background-color: #eff3f5;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            height: 42px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 320px;
+
+            mat-icon {
+              color: #333333;
+            }
+
+            input {
+              border: none;
+              background-color: #eff3f5;
+              margin-left: 10px;
+              width: 100%;
+              max-width: 250px;
+              height: 40px;
+
+              &:focus,
+              &:active {
+                outline: none;
+              }
+            }
+
+            button {
+              height: 42px;
+              background-color: #eff3f5;
+              border-radius: 0 20px 20px 0;
+            }
+          }
+          .top-toolbar-button-group {
+            button {
+              &:not(:first-child) {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  app-secondary-actions-panel {
+    width: 77px;
+
+    .navigation-panel {
+      width: 77px;
+    }
+  }
+}
+
+.custom-tooltext {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--light);
+}

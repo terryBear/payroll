@@ -1,0 +1,17 @@
+.chart-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  .dashboard-card {
+    width: 47%;
+    border-radius: 10px;
+    padding: 16px;
+    background-color: #fff;
+    margin: 5px;
+
+    &.half-width {
+      width: 22.4%;
+    }
+  }
+}

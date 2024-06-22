@@ -1,0 +1,8 @@
+<div class="dashboard-container-center">
+  <app-datagrid
+    title="Employees"
+    [rowData]="rowData"
+    [colDefs]="coldefs"
+    (rowSelectedEvent)="onRowSelected($event)"
+  ></app-datagrid>
+</div>

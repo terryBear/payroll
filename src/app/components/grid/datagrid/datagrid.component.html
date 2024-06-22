@@ -1,0 +1,37 @@
+<div class="grid-card">
+  <div class="top-toolbar">
+    <div class="search-component">
+      <mat-icon mat-list-icon>search</mat-icon>
+      <input
+        (keyup)="applyFilter($event)"
+        [(ngModel)]="searchtext"
+        placeholder="Search"
+      />
+      <ng-container *ngIf="showReset">
+        <button class="btn-clear" (click)="resetData()">
+          <mat-icon mat-list-icon>clear</mat-icon>
+        </button>
+      </ng-container>
+    </div>
+    <div class="top-toolbar-button-group">
+      <button class="btn-secondary">Secondary</button>
+      <button class="btn-primary">Primary</button>
+    </div>
+  </div>
+  <ng-container *ngIf="title">
+    <h3>{{ title }}</h3>
+  </ng-container>
+  <ag-grid-angular
+    id="dataGrid"
+    class="ag-theme-quartz"
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    [ngStyle]="{ height: title ? '87vh' : '91vh', width: '100%' }"
+    rowSelection="single"
+    (selectionChanged)="onRowSelected($event)"
+    (gridReady)="onGridReady($event)"
+    [preventDefaultOnContextMenu]="true"
+    [getContextMenuItems]="getContextMenuItems.bind(this)"
+  >
+  </ag-grid-angular>
+</div>

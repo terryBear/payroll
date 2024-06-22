@@ -1,0 +1,17 @@
+<div class="navigation-panel" [ngClass]="divider ? 'divider' : 'no-divider'">
+  <app-logo *ngIf="showlogo"></app-logo>
+  <mat-list>
+    <ng-container *ngFor="let route of routes">
+      <mat-list-item [ngClass]="divider ? 'divider' : 'no-divider'">
+        <a
+          mat-line
+          [routerLink]="'/' + route.path"
+          [routerLinkActive]="'link-selected'"
+        >
+          <mat-icon mat-list-icon>{{ route.icon }}</mat-icon>
+          <span>{{ route.name }}</span>
+        </a>
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+</div>

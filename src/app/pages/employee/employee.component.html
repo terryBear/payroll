@@ -1,0 +1,120 @@
+<div class="dashboard-container-center-detail">
+  <div class="grid-card">
+    <ng-container *ngIf="employee">
+      <div class="card-header">
+        <h3 class="flex-center">
+          <button class="btn-clear" (click)="goBack()">
+            <mat-icon fontIcon="keyboard_backspace"></mat-icon>
+          </button>
+          {{ employee?.lastname + ", " + employee?.firstname }}
+        </h3>
+        <div class="flex-between">
+          <p class="flex-below">
+            No:
+            <span
+              ><b>{{ employee["Employee Id"] }}</b></span
+            >
+          </p>
+          <p class="flex-below">
+            Team:
+            <span
+              ><b>{{ employee.team }}</b></span
+            >
+          </p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <h5>Overview</h5>
+      <div class="card">
+        <div class="flex-between">
+          <img
+            src="assets/charts/up.png"
+            alt="chart-icon"
+            class="detail-icon-sm"
+          />
+          <p class="flex-below">
+            Total Earnings:
+            <span
+              ><b>{{ prettyNumber(employee.earnings) }}</b></span
+            >
+          </p>
+        </div>
+        <div class="flex-between">
+          <img
+            src="assets/charts/down.png"
+            alt="chart-icon"
+            class="detail-icon-sm"
+          />
+          <p class="flex-below">
+            Total Deductions:
+            <span
+              ><b>{{ prettyNumber(employee.deductions) }}</b></span
+            >
+          </p>
+        </div>
+        <div class="flex-between">
+          <img
+            src="assets/charts/business.png"
+            alt="chart-icon"
+            class="detail-icon-sm"
+          />
+          <p class="flex-below">
+            Net Total:
+            <span
+              ><b>{{ prettyNumber(employee.total) }}</b></span
+            >
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="flex-between border-medium">
+          <img
+            src="assets/charts/file.png"
+            alt="chart-icon"
+            class="detail-icon-sm"
+          />
+          <p class="flex-below">
+            UIF:
+            <span
+              ><b>{{ prettyNumber(employee.uif) }}</b></span
+            >
+          </p>
+        </div>
+        <div class="flex-between">
+          <img
+            src="assets/charts/money.png"
+            alt="chart-icon"
+            class="detail-icon-sm"
+          />
+          <p class="flex-below">
+            PAYE:
+            <span
+              ><b>{{ prettyNumber(employee.tax) }}</b></span
+            >
+          </p>
+        </div>
+        <div class="flex-between">
+          <img
+            src="assets/charts/calculator.png"
+            alt="chart-icon"
+            class="detail-icon-sm"
+          />
+          <p class="flex-below">
+            Total:
+            <span
+              ><b>{{ prettyNumber(employee.deductions) }}</b></span
+            >
+          </p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<div class="dashboard-container-center">
+  <app-datagrid
+    [rowData]="rowData"
+    [colDefs]="coldefs"
+    (rowSelectedEvent)="onRowSelected($event)"
+  ></app-datagrid>
+</div>
