@@ -50,7 +50,8 @@ I haven't worked on angular for about 6 years, so setting up the initial project
 - Add Authentication
 - Add file export options for Grids
 - Add Historical Payslip Data as well as IRP5 PDF/CSV downloads
-- Make use of some data analytics service for dashboard charts
+- Make use of some data analytics service like Power BI, Tableau, Google Analytics or MongoDB App Service for dashboard charts
+- Make application mobile responsive to cater for all screen sizes
 
 ## **Total Time Spent**
 
